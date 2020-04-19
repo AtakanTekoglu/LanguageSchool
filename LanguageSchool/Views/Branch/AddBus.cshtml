@@ -1,0 +1,26 @@
+﻿@model LanguageSchool.Models.BusTransportation
+
+@{
+    ViewBag.Title = "AddAddress";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Otobüs Bilgisi Ekleme Sayfası</h2>
+
+<form method="post" class="form-group">
+    <div>
+        <label>Hangi şube için ekleme yapacaksınız?</label>
+        @Html.DropDownListFor(m => m.Branch.Id, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    </div>
+    <div>
+        <label style="margin-top: 10px;">Otobüs numarasını giriniz:</label>
+        <input type="text" class="form-control" name="Busnumber" placeholder="Örn:15B" />
+    </div>
+    <div>
+        <label style="margin-top: 10px;">Kalkış/varış bilgisini giriniz:</label>
+        <input type="text" class="form-control" name="Description"/>
+    </div>
+    <div style="margin-top: 10px; ">
+        <button class="btn btn-success">Otobüs Bilgisi Ekle</button>
+    </div>
+</form>

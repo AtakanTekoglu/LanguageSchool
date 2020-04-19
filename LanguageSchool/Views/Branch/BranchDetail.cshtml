@@ -1,0 +1,93 @@
+﻿
+@model  LanguageSchool.Models.ResultViewModel
+
+
+@{
+    ViewBag.Title = "BranchDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card" style="width: 69,7rem;">
+    <div class="card-body">
+        <h4 class="card-title">@ViewBag.myBra Şubesi</h4>
+        <h5>Kurslar</h5>
+
+        @{
+            string[] colors = new string[8] { "bg-primary", "bg-secondary", "bg-success", "bg-danger", "bg-warning", "bg-info", "bg-light", "bg-dark" };
+            int i = 0;
+
+
+            foreach (var item in Model._Courses)
+            {
+                <div style="float: left; margin-right: 10px">
+                    <div class="card text-white @colors[i] mb-3" style="max-width: 30rem;">
+                        <div class="card-body">
+                            <h6 class="card-title">@item.Description (@item.Language.Name  @item.Level.Sign Kuru)</h6>
+                        </div>
+                    </div>
+                </div>
+
+
+                if (i == 8)
+                {
+                    i = 0;
+                }
+                i++;
+            }
+            <div style="clear:both"></div>
+
+        }
+
+        
+
+        <h5>Sosyal olanaklar</h5>
+
+        @foreach (var item in Model._SocialOpportunities)
+        {
+            <div style="float: left; margin-right: 10px">
+                <div class="card" style="max-width: 30rem; margin-bottom:5px">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Title</h5>
+                        <p class="card-text">@item.Description</p>
+                    </div>
+                </div>
+            </div>
+        }
+        <div style="clear:both"></div>
+
+
+        <h5>Şubemize gelen otobüsler</h5>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Otobüs Numarası</th>
+                    <th scope="col">Kalkış ve Varış Durakları</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model._BusTransportations)
+            {
+
+                <tbody>
+
+                    <tr>
+                        <td>@item.Busnumber</td>
+                        <td>@item.Description</td>
+
+                    </tr>
+                </tbody>
+            }
+
+        </table>
+
+
+        <h5>Adres</h5>
+
+        <!--Google map-->
+        <div id="map-container-google-2" class="z-depth-1-half map-container">
+            <iframe src="https://maps.google.com/maps?q=@ViewBag.myAdd&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    style="border: 0; width: 800px; height:500px" allowfullscreen></iframe>
+        </div>
+        <a href="~/Branch/Index" class="btn btn-primary">Şubeler Sayfasına Dön</a>
+    </div>
+</div>

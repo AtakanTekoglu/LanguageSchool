@@ -1,0 +1,65 @@
+﻿@model LanguageSchool.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h4>Öğrenci Detay Görüntüleme</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Doğum Tarihi</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Birthdate)
+        </dd>
+
+        <dt>
+            <label>Memleket</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            <label>İsim</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Firstname)
+        </dd>
+
+        <dt>
+            <label>Soyisim</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lastname)
+        </dd>
+
+        <dt>
+            <label>Email</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            <label>Telefon</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.Id },new{@class="btn btn-warning"}) 
+    @Html.ActionLink("Geri Dön", "Index","",new {@class="btn btn-primary"})
+</p>

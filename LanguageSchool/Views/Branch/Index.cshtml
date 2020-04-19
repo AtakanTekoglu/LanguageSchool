@@ -1,0 +1,39 @@
+﻿@using LanguageSchool.Models
+@model List<LanguageSchool.Models.Branch>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    string[] colors = new string[7] { "bg-primary", "bg-secondary", "bg-success", "bg-danger", "bg-warning", "bg-info", "bg-dark", };
+    int i = 0;
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+
+
+            <div class="col-xl-3 col-md-6">
+                <div class="card @colors[i] text-white mb-4">
+                    <div class="card-body">@item.Name Şubesi</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="~/Branch/BranchDetail/@item.Id">Detayları Görüntüle</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+
+            if (i == 7)
+            {
+                i = 0;
+            }
+            i++;
+        }
+    </div>
+
+    <div style="clear:both"></div>
+}
+
+

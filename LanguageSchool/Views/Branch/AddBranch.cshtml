@@ -1,0 +1,33 @@
+﻿@using LanguageSchool.Models
+@model LanguageSchool.Models.Branch
+@{
+    ViewBag.Title = "AddBranch";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+    Şube Ekle
+</button>
+
+
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Şube Ekle</h2>
+            </div>
+            <form method="post">
+                <div class="modal-body">
+                    <label>Şube Adı:</label>
+                        @Html.TextBoxFor(model=>model.Name, new { @class = "form-control" })
+                        <br />
+                    <button class="btn btn-success">Ekle</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+

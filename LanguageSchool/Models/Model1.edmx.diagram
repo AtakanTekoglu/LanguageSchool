@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b21bb58868c844fd9bf214dc074d5cbd" Name="Diagram1">
+        <EntityTypeShape EntityType="LanguageAcademyModel.Address" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageAcademyModel.Appointment" Width="1.5" PointX="10.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageAcademyModel.Branch" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageAcademyModel.BusTransportation" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageAcademyModel.Class" Width="1.5" PointX="8.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageAcademyModel.Class_Students" Width="1.5" PointX="10.5" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageAcademyModel.Class_WeekDay" Width="1.5" PointX="10.5" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageAcademyModel.Course" Width="1.5" PointX="6" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageAcademyModel.FinancialStatement" Width="1.5" PointX="13.5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageAcademyModel.Language" Width="1.5" PointX="3.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageAcademyModel.Level" Width="1.5" PointX="3.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageAcademyModel.SocialOpportunity" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageAcademyModel.Staff" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageAcademyModel.Student" Width="1.5" PointX="8.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageAcademyModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageAcademyModel.Teacher" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageAcademyModel.WeekDay" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="LanguageAcademyModel.FK_Address_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageAcademyModel.FK_Appointment_Teacher" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageAcademyModel.FK_Appointment_WeekDay" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageAcademyModel.FK_BusTransportation_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageAcademyModel.FK_Course_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageAcademyModel.FK_SocialOpportunity_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageAcademyModel.FK_Class_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageAcademyModel.FK_Class_Students_Class" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageAcademyModel.FK_Class_Teacher" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageAcademyModel.FK_Class_WeekDay_Class" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageAcademyModel.FK_FinancialStatement_Class" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageAcademyModel.FK_Class_Students_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageAcademyModel.FK_Class_WeekDay_WeekDay" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageAcademyModel.FK_Course_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageAcademyModel.FK_Course_Level" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageAcademyModel.FK_FinancialStatement_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageAcademyModel.Language_TeacherLang" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

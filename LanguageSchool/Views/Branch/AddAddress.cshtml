@@ -1,0 +1,23 @@
+﻿@model LanguageSchool.Models.Address
+
+@{
+    ViewBag.Title = "AddAddress";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Adres Ekleme Sayfası</h2>
+
+<form method="post" class="form-group">
+    <div>
+        <label>Hangi şube için ekleme yapacaksınız?</label>
+        @Html.DropDownListFor(m=>m.Branch.Id,(List<SelectListItem>)ViewBag.dgr,new {@class="form-control"})
+    </div>
+    <div>
+        <label style="margin-top: 10px;">Adresi detaylı olarak giriniz:</label>
+        <input type="text" class="form-control" name="Description" />
+    </div>
+    <div style="margin-top: 10px; ">
+        <button class="btn btn-success">Adres Ekle</button>
+    </div>
+</form>
+

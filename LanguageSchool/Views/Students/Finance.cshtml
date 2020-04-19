@@ -1,0 +1,54 @@
+﻿@model List<LanguageSchool.Models.FinancialStatement>
+@{
+    ViewBag.Title = "Finance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Öğrenci Ödeme Tablosu</h3>
+<hr/>
+<h4>@ViewBag.Student.Firstname @ViewBag.Student.Lastname</h4>
+<h5>Toplam Borç:<span style="font-weight: bold">@ViewBag.paymentSum</span></h5>
+
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th>
+            Dersin Adı
+        </th>
+        <th>
+            <label>Taksit Sırası</label>
+        </th>
+        <th>
+            <label>Taksit Tutarı</label>
+        </th>
+        <th>
+            <label>Son Ödeme Tarihi</label>
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Class.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderOfInstallment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date.Day)/
+                @Html.DisplayFor(modelItem => item.Date.Month)/
+                @Html.DisplayFor(modelItem => item.Date.Year)
+            </td>
+            <td>
+                @Html.ActionLink("Öde", "Payment", new {id = item.Id}, new {@class = "btn btn-success"})
+            </td>
+        </tr>
+    }
+
+</table>
+

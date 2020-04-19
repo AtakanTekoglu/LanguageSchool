@@ -1,0 +1,76 @@
+﻿@model  LanguageSchool.Models.TeacherDetailViewModel
+
+@{
+    ViewBag.Title = "ClassTeacherDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Öğretmen Detay Sayfası</h2>
+
+
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th>İşe başlama tarihi</th>
+            <th scope="col">Öğretebileceği Diller</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>@ViewBag.dgr.Firstname</td>
+            <td>@ViewBag.dgr.Lastname</td>
+            <td>@ViewBag.dgr.Email</td>
+            <td>@ViewBag.dgr.Phone</td>
+            <td>@ViewBag.dgr.DateOfStart.Day/@ViewBag.dgr.DateOfStart.Month/@ViewBag.dgr.DateOfStart.Year</td>
+
+
+            <td>
+                @foreach (var item in Model.Languages)
+                {
+                    @item.Name @:
+                }
+            </td>
+
+        </tr>
+
+    </tbody>
+</table>
+
+
+
+<h5>Çalışabileceği gün ve saatler</h5>
+<table class="table">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">Gün</th>
+        <th scope="col">Saat</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.TeacherAppointments)
+    {
+        <tr>
+            <td>@item.DayName</td>
+            <td>@item.WHours</td>
+        </tr>
+    }
+
+
+        
+    </tbody>
+</table>
+<a href="~/Class/ShowClass" class="btn btn-primary">Sınıf Sayfasına Dön</a>
+
+
+
+
+
+
+

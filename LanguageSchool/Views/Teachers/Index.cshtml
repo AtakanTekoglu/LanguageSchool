@@ -1,0 +1,74 @@
+﻿@model IEnumerable<LanguageSchool.Models.Teacher>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Öğretmen Bilgisi Görüntüleme Sayfası</h3>
+
+<p>
+    @Html.ActionLink("Öğretmen Ekle", "Create","Teachers",new {@class="btn btn-success"})
+</p>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Tanım
+            </th>
+            <th>
+                İsim
+            </th>
+            <th>
+                Soyisim
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Telefon
+            </th>
+            <th>
+                Başlangıç Tarihi
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfStart.Day)/
+                @Html.DisplayFor(modelItem => item.DateOfStart.Month)/
+                @Html.DisplayFor(modelItem => item.DateOfStart.Year)
+            </td>
+            <td>
+                @Html.ActionLink("Düzelt", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" })
+            </td>
+            <td>
+                @Html.ActionLink("Detay", "Details", new { id = item.Id }, new { @class = "btn btn-warning" })
+            </td>
+            <td>
+                @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

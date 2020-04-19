@@ -1,0 +1,40 @@
+﻿@model IEnumerable<LanguageSchool.Models.Class_Students>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Öğrenci Ders Kayıt</h2>
+
+<p>
+    @Html.ActionLink("Yeni Öğrenci Ders Kayıt", "Create","",new {@class="btn btn-success"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label>Kayıt Olunan Sınıf/Ders</label>
+        </th>
+        <th>Ücret</th>
+        <th>
+            <label>Ad Soyad</label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Class.Name)
+        </td>
+        <td>@item.Class.Price</td>
+        <td>
+            @item.Student.Firstname @item.Student.Lastname
+        </td>
+        <td>
+            @Html.ActionLink("Sil", "Delete", new { id=item.Id },new{@class="btn btn-danger"})
+        </td>
+    </tr>
+}
+
+</table>

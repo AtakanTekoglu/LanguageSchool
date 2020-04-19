@@ -1,0 +1,36 @@
+﻿@using LanguageSchool.Models
+@model List<LanguageSchool.Models.Class_WeekDay>
+@{
+    ViewBag.Title = "ClassWeekDay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <h2>Gün ve Saat Bilgileri</h2>
+
+
+
+<table class="table">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">Ders ismi</th>
+        <th scope="col">Gün</th>
+        <th scope="col">Saat</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Class.Name</td>
+            <td>@item.WeekDay.Name</td>
+            <td>@item.Hours</td>
+        </tr>
+
+    }
+
+    </tbody>
+</table>
+
+<a href="~/Class/ShowClass" class="btn btn-primary">Sınıf Sayfasına Dön</a>

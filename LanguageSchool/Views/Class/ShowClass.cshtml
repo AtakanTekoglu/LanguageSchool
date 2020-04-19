@@ -1,0 +1,44 @@
+﻿@using LanguageSchool.Models
+@model List<LanguageSchool.Models.Class>
+
+@{
+    ViewBag.Title = "ShowClass";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Ders İsmi</th>
+            <th scope="col">Başlangıç ve Bitiş Tarihi</th>
+            <th scope="col">Ücreti</th>
+            <th scope="col">Yürütücü Öğretmen</th>
+            <th scope="col">Tanımı</th>
+            <th scope="col">Bağlı Olduğu Şube</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.StartDate.Day/@item.StartDate.Month/@item.StartDate.Year- @item.EndDate.Day/@item.EndDate.Month/@item.EndDate.Year</td>
+            <td>@item.Price</td>
+            <td>@item.Teacher.Firstname @item.Teacher.Lastname</td>
+            <td>@item.Course.Description</td>
+            <td>@item.Course.Branch.Name</td>
+            <td><a href="/Class/ClassWeekDay/@item.Id" class="btn btn-primary">Saat ve Gün Bilgisi</a></td>
+            <td><a href="/Class/ClassTeacherDetail/@item.Teacher.Id" class="btn btn-warning">Öğretmen Detay</a></td>
+            <td><a href="#" class="btn btn-success">Öğrenci Kayıt</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+

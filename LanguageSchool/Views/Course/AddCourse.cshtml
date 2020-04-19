@@ -1,0 +1,35 @@
+﻿@model LanguageSchool.Models.Course
+@{
+    ViewBag.Title = "AddCourse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kurs Ekleme Sayfası</h2>
+
+<form method="post" class="form-group">
+    <div>
+        <label>Hangi şube için ekleme yapacaksınız?</label>
+        @Html.DropDownListFor(m => m.Branch.Id, (List<SelectListItem>)ViewBag.branch, new { @class = "form-control"})
+    </div>
+
+
+    <div>
+        <label style="margin-top: 10px;">Dil Seçimi:</label>
+        @Html.DropDownListFor(m => m.Language.Id, (List<SelectListItem>)ViewBag.language, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label style="margin-top: 10px;">Kur Seçimi:</label>
+        @Html.DropDownListFor(m => m.Level.Id, (List<SelectListItem>)ViewBag.level, new { @class = "form-control" })
+    </div>
+
+
+
+    <div>
+        <label style="margin-top: 10px;">Kurs için tanım yapınız:</label>
+        <input type="text" class="form-control" name="Description" placeholder="Örn:Beginner Course"/>
+    </div>
+    <div style="margin-top: 10px; ">
+        <button class="btn btn-success">Kurs Ekle</button>
+    </div>
+</form>

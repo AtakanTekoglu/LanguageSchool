@@ -1,0 +1,19 @@
+﻿@model LanguageSchool.Models.TeacherDayAppointmentController
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Öğretmene Özel Ders Saati Ekleme Sayfası</h2>
+
+<form method="post" class="form-group">
+    <div>
+        <label>Öğretmen Adı</label>
+       @foreach (var item in Model._Teachers)
+       {
+           @Html.DropDownListFor(m=>m.)
+       }
+    </div>
+</form>
+

@@ -1,0 +1,37 @@
+﻿
+@using LanguageSchool.Models
+@model List<LanguageSchool.Models.Course>
+
+@{
+    ViewBag.Title = "ShowCourse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">Tanım</th>
+        <th scope="col">Dil</th>
+        <th scope="col">Kur Bilgisi</th>
+        <th scope="col">Kursun Alınabileceği Şube</th>
+    </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Description</td>
+                <td>@item.Language.Name</td>
+                <td>@item.Level.Name</td>
+                
+                <td>@item.Branch.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

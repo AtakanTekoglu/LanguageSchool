@@ -1,0 +1,45 @@
+﻿@model IEnumerable<LanguageSchool.Models.Appointment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Öğretmen Detay Sayfası</h2>
+
+<p>
+    @Html.ActionLink("Öğretmen Gün ve Saat Bilgisi Ekle", "Create","",new{@class="btn btn-primary"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Saat
+        </th>
+        <th>
+            Öğretmen Adı
+        </th>
+        <th>
+            Gün
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hours)
+        </td>
+        <td>
+            @item.Teacher.Firstname @item.Teacher.Lastname
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WeekDay.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Değiştir", "Edit", new { id=item.Id },new{@class="btn btn-warning"}) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.Id },new{@class="btn btn-danger"})
+        </td>
+    </tr>
+}
+
+</table>
